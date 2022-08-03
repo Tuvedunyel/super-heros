@@ -1,13 +1,15 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { questions, Questions } from "./question";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setGoodPoints, setBadPoints } from "../features/points.slice";
-import { setEndGame } from "./../features/playing.slice";
+import { setEndGame } from "../features/playing.slice";
+import FinishScreen from "./FinishScreen";
 
 const Slide: FC = () => {
     const slideQuestions: Questions = questions
     const [ a, setA ] = useState( 0 );
     const [ b, setB ] = useState( 1 );
+    const endGame = useSelector( ( state: { playingSlice: { gameEnd: boolean } } ) => state.playingSlice.gameEnd );
     const dispatch = useDispatch();
 
     const handleClick = ( answer: boolean ) => {
@@ -24,43 +26,56 @@ const Slide: FC = () => {
         }
     }
 
+    useEffect( () => {
+        console.log(endGame)
+    }, [  ] );
+
+
     return (
-        <section className="slide">
+        <>
             {
-                slideQuestions.slice( a, b ).map( question => (
-                    <div className="container-slide" key={ question.id }>
-                        <div
-                            className={ question.backgroundType ? `${ question.backgroundType } background` : "background" }
-                            style={ { background: `url(${ question.background }) no-repeat center center` } }>
-                        </div>
-                        <div className="top">
-                            <h2>
-                                { question.titleBlack[ 0 ] }
-                                <span className='titleBlue'>{ question.titleBlue }</span>
-                                { question.titleBlack[ 1 ] && question.titleBlack[ 1 ] }
-                            </h2>
-                        </div>
-                        <div className={ question.classes ? `${ question.classes } middle` : "middle" }>
-                            <ul>
-                                {
-                                    question.imageUrl.map( ( image: string, index: number ) => (
-                                        <li key={ index } className={ question.type && question.type }>
-                                            <img src={ image } alt={ question.imageAlt }/>
-                                        </li>
-                                    ) )
-                                }
-                            </ul>
-                        </div>
-                        <div className="question-bottom">
-                            <button className="btn yes-btn" onClick={ () => handleClick( true ) }>Oui <span
-                                className="pseudo-bg">Oui</span></button>
-                            <button className="btn no-btn" onClick={ () => handleClick( false ) }>Non <span
-                                className="pseudo-bg">Non</span></button>
-                        </div>
-                    </div>
-                ) )
+                endGame ? (
+                    <FinishScreen />
+                ) : (
+                    <section className="slide">
+                        {
+                            slideQuestions.slice( a, b ).map( question => (
+                                <div className="container-slide" key={ question.id }>
+                                    <div
+                                        className={ question.backgroundType ? `${ question.backgroundType } background` : "background" }
+                                        style={ { background: `url(${ question.background }) no-repeat center center` } }>
+                                    </div>
+                                    <div className="top">
+                                        <h2>
+                                            { question.titleBlack[ 0 ] }
+                                            <span className='titleBlue'>{ question.titleBlue }</span>
+                                            { question.titleBlack[ 1 ] && question.titleBlack[ 1 ] }
+                                        </h2>
+                                    </div>
+                                    <div className={ question.classes ? `${ question.classes } middle` : "middle" }>
+                                        <ul>
+                                            {
+                                                question.imageUrl.map( ( image: string, index: number ) => (
+                                                    <li key={ index } className={ question.type && question.type }>
+                                                        <img src={ image } alt={ question.imageAlt }/>
+                                                    </li>
+                                                ) )
+                                            }
+                                        </ul>
+                                    </div>
+                                    <div className="question-bottom">
+                                        <button className="btn yes-btn" onClick={ () => handleClick( true ) }>Oui <span
+                                            className="pseudo-bg">Oui</span></button>
+                                        <button className="btn no-btn" onClick={ () => handleClick( false ) }>Non <span
+                                            className="pseudo-bg">Non</span></button>
+                                    </div>
+                                </div>
+                            ) )
+                        }
+                    </section>
+                )
             }
-        </section>
+        </>
     );
 };
 
