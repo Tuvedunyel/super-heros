@@ -31,6 +31,17 @@ export const finishData = [
         infoBulleUn: "Il faut s’entrainer encore",
         infoBulleDeux: "on discute de vos capacités ?",
         textButton: "Je veux un super pouvoir"
+    },
+    {
+        id: 3,
+        titles: ["Bon, vous n'êtes,", "pas un.e super héros..."],
+        img: {
+            url: "https://btg-communication.fr/wp-content/uploads/2022/08/mauvais.png",
+            alt: "Home avec un casque et une cape rouge"
+        },
+        infoBulleUn: "Il faut que l'on discute",
+        infoBulleDeux: "Il est temps d'échanger avec nous",
+        textButton: "Je veux apprendre"
     }
 ]
 

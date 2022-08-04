@@ -26,10 +26,6 @@ const Slide: FC = () => {
         }
     }
 
-    useEffect( () => {
-        console.log(endGame)
-    }, [  ] );
-
 
     return (
         <>
