@@ -49,6 +49,14 @@ h2 {
   span {
     font-size: 10.5rem;
     color: #061A86;
+
+    @media screen and (max-width: 457px) {
+      font-size: 7.5rem;
+    }
+
+    @media screen and (max-width: 320px) {
+      font-size: 5.5rem;
+    }
   }
 }
 
@@ -68,6 +76,10 @@ h2 {
   width: fit-content;
   height: fit-content;
 
+  @media screen and (max-width: 975px) {
+    flex-direction: column;
+  }
+
   li {
     display: flex;
     justify-content: center;
@@ -83,6 +95,10 @@ h2 {
   align-items: center;
   gap: 2em;
 
+  @media screen and (max-width: 641px) {
+    flex-direction: column;
+  }
+
   .btn {
     margin-top: 0;
     font-size: 3.3rem;
@@ -96,4 +112,7 @@ h2 {
   top: -43%;
   z-index: -1;
 
+  @media screen and (max-width: 1800px) {
+    right: 0;
+  }
 }

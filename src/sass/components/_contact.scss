@@ -1,0 +1,126 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 3em;
+  width: 100%;
+  height: calc(100% - 6em);
+
+  h2 {
+    font-size: 7.5rem;
+    color: #061A86;
+    text-transform: uppercase;
+    text-align: center;
+    max-width: 75%;
+
+    @media screen and (max-width: 892px) {
+      max-width: 100%;
+    }
+  }
+}
+
+.hero-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.second-part {
+  position: relative;
+  margin-top: 5.8rem;
+  width: 100%;
+
+  img {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    top: 11%;
+    perspective: 100px;
+    transform: rotateY(180deg);
+  }
+
+  .bulle {
+    width: fit-content;
+    height: fit-content;
+    font-size: 2.7rem;
+    position: absolute;
+    z-index: 1;
+    padding: 1em 2em;
+    color: #FF3C3E;
+    right: 0;
+    top: -124%;
+
+    @media screen and (max-width: 1068px) {
+      display: none;
+    }
+  }
+
+  h3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #061A86;
+    font-size: 2.8rem;
+    font-family: 'Exo', sans-serif;
+    font-weight: 700;
+    text-align: center;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.7rem;
+  width: 100%;
+
+  .btn {
+    font-size: 3.3rem;
+    padding: 2.9rem 11rem 2.2rem 11.5rem;
+
+    @media screen and (max-width: 404px) {
+      padding: 2rem 7rem 1.6rem 7.5rem;
+    }
+
+    span {
+      font-size: 3.3rem;
+    }
+  }
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+
+  @media screen and (max-width: 1082px) {
+    width: 100%;
+  }
+}
+
+input {
+  width: 100%;
+  font-family: 'Exo', sans-serif;
+  font-size: 2.7rem;
+  padding-block: 0.5em;
+  padding-inline: 0.5em;
+  border-radius: 3.3rem;
+  border: 1px solid #061A86;
+
+  &:focus {
+    outline: #3C8EFF;
+  }
+}
+
+.label {
+  font-family: 'Exo', sans-serif;
+  font-size: 2.2rem;
+  color: white;
+  font-weight: 700;
+}

@@ -25,7 +25,7 @@ const App: FC = () => {
                                 de rentrée ?
                             </h1>
                         </section>
-                        <section className="bottom">
+                        <section className="bottom front">
                             <button className="btn no-btn" onClick={ () => dispatch( setPlaying( true ) ) }>Pas du
                                 tout <span className="pseudo-bg">Pas du tout </span></button>
                             <div className="questionMen"

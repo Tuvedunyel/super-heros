@@ -10,6 +10,15 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
+
+  @media screen and (max-width: 1800px) {
+    overflow: auto;
+    height: 100%;
+  }
+
+  @media screen and (max-width: 1316px) {
+    height: 100vh;
+  }
 }
 
 .container {
@@ -20,6 +29,10 @@
   margin: auto;
   max-width: 75%;
   height: 100%;
+
+  @media screen and (max-width: 404px) {
+    max-width: 95%;
+  }
 }
 
 h1 {
@@ -32,27 +45,75 @@ h1 {
   font-size: 3.5rem;
   line-height: 1;
   padding-top: 2.2rem;
+  margin-top: 2em;
+
+  @media screen and (max-width: 620px) {
+    margin-top: 1em;
+    padding-top: 0;
+  }
+
 
   span {
     font-size: 9.5rem;
     color: #061A86;
+
+    @media screen and (max-width: 620px) {
+      font-size: 7.5rem;
+    }
+
+    @media screen and (max-width: 490px) {
+      font-size: 5.5rem;
+    }
+
+    @media screen and (max-width: 354px) {
+      font-size: 4.5rem;
+    }
   }
 }
 
 .bottom {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: end;
 
   .questionMen {
     background-size: cover;
     width: 516px;
     height: 690px;
+
+    @media screen and (max-width: 1316px) {
+      position: absolute;
+      margin: auto;
+    }
+
+    @media screen and (max-width: 516px) {
+      display: none;
+    }
+  }
+}
+
+.front {
+  @media screen and (max-width: 1316px) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+  }
+}
+
+.front .btn {
+  margin-bottom: 4em;
+
+  @media screen and (max-width: 1316px) {
+    margin-bottom: 2em;
   }
 }
 
 .btn {
-  color: white;
+  color: transparent;
+  white-space: nowrap;
   text-transform: uppercase;
   padding: 3.8rem 9.5rem 2.9rem 9.5rem;
   border-radius: 90px;
@@ -60,9 +121,19 @@ h1 {
   position: relative;
   border: none;
   z-index: 3;
-  margin-top: 6em;
+
+  @media screen and (max-width: 402px) {
+    padding: 2.9rem 7.5rem 2rem 7.5rem;
+  }
+
+  @media screen and (max-width: 362px) {
+    font-size: 3.5rem;
+  }
+
 
   .pseudo-bg {
+    white-space: normal;
+    color: white;
     width: 100%;
     height: 100%;
     position: absolute;
