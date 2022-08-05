@@ -69,7 +69,7 @@ export const questions = [
         background: "https://btg-communication.fr/wp-content/uploads/2022/08/logo-superman.svg",
         titleBlack: ["J'ai mon propre", "pour partager mon savoir"],
         titleBlue: "film",
-        imageUrl: ["https://btg-communication.fr/wp-content/uploads/2022/08/mock_up-film_superman.png"],
+        imageUrl: ["https://btg-communication.fr/wp-content/uploads/2022/08/mock_up-film_superman2.png"],
         imageAlt: "Télé avec superman prononçant un discours",
         isAnswered: false,
         classes: "superman",
@@ -84,6 +84,16 @@ export const questions = [
         imageAlt: "Carte d'hébergement",
         isAnswered: false,
         type: "flash"
+    },
+    {
+        id: 9,
+        background: "https://btg-communication.fr/wp-content/uploads/2022/08/xmen-bg.svg",
+        titleBlack: ["J'ai un vrai", "pour présenter mon entreprise"],
+        titleBlue: "motion design",
+        imageUrl: ["https://btg-communication.fr/wp-content/uploads/2022/08/xmen-tele.png"],
+        imageAlt: "Télévision",
+        isAnswered: false,
+        classes: "cyclop"
     }
 ]
 

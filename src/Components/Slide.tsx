@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { setGoodPoints, setBadPoints } from "../features/points.slice";
 import { setEndGame } from "../features/playing.slice";
 import FinishScreen from "./FinishScreen";
+import supermanGif from '../assets/superman.gif'
+import xmenGif from '../assets/xmen.gif'
 
 const Slide: FC = () => {
     const slideQuestions: Questions = questions
@@ -31,7 +33,7 @@ const Slide: FC = () => {
         <>
             {
                 endGame ? (
-                    <FinishScreen />
+                    <FinishScreen/>
                 ) : (
                     <section className="slide">
                         {
@@ -53,7 +55,18 @@ const Slide: FC = () => {
                                             {
                                                 question.imageUrl.map( ( image: string, index: number ) => (
                                                     <li key={ index } className={ question.type && question.type }>
-                                                        <img src={ image } alt={ question.imageAlt }/>
+                                                        <img src={ image } alt={ question.imageAlt }
+                                                             className={ question.classes === "cyclop" ? 'cyclopTV' : '' }/>
+                                                        { question.classes === "superman" &&
+                                                            <img src={ supermanGif }
+                                                                 alt="Gif de superman à la télévision"
+                                                                 className="supermanGif"/>
+                                                        }
+                                                        {
+                                                            question.classes === "cyclop" &&
+                                                            <img src={ xmenGif } alt="Cyclop présenter le motion design"
+                                                                 className="cyclop-gif"/>
+                                                        }
                                                     </li>
                                                 ) )
                                             }

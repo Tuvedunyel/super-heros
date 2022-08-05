@@ -54,7 +54,7 @@ h2 {
       font-size: 7.5rem;
     }
 
-    @media screen and (max-width: 320px) {
+    @media screen and (max-width: 370px) {
       font-size: 5.5rem;
     }
   }
@@ -66,6 +66,14 @@ h2 {
     height: 760px;
     margin: auto;
     left: 23%;
+
+    @media screen and (max-width: 1568px) {
+      left: 17%;
+    }
+
+    @media screen and (max-width: 1294px) {
+      left: 11%;
+    }
 }
 
 .middle ul {
@@ -115,4 +123,23 @@ h2 {
   @media screen and (max-width: 1800px) {
     right: 0;
   }
+}
+
+.supermanGif {
+  position: absolute;
+  top: 40%;
+  left: 8%;
+  z-index: -1;
+}
+
+.cyclopTV {
+  width: 915px;
+  height: 620px;
+}
+
+.cyclop-gif {
+  position: absolute;
+  top: 7.5%;
+  z-index: -1;
+  height: 468px;
 }
