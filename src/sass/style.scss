@@ -27,7 +27,7 @@
   justify-content: center;
   align-items: center;
   margin: auto;
-  max-width: 75%;
+  width: min(75%, 1920px);
   height: 100%;
 
   @media screen and (max-width: 404px) {

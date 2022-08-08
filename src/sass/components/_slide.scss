@@ -39,8 +39,7 @@
 h2 {
   font-size: 3.2rem;
   text-transform: uppercase;
-  text-align: center;
-  text-align: center;
+  text-align: center;;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,7 +50,7 @@ h2 {
     font-size: 10.5rem;
     color: #061A86;
 
-    @media screen and (max-width: 457px) {
+    @media screen and (max-width: 574px) {
       font-size: 7.5rem;
     }
 
@@ -61,20 +60,64 @@ h2 {
   }
 }
 
-  .superman {
-    position: absolute;
-    width: 967px;
-    height: 760px;
-    margin: auto;
-    left: 23%;
+.superman {
+  position: absolute;
+  width: 967px;
+  height: 760px;
+  margin: auto;
+  left: 23%;
 
-    @media screen and (max-width: 1568px) {
-      left: 17%;
-    }
+  @media screen and (max-width: 1568px) {
+    left: 17%;
+  }
 
-    @media screen and (max-width: 1294px) {
-      left: 11%;
-    }
+  @media screen and (max-width: 1299px) {
+    left: 9%;
+  }
+
+  @media screen and (max-width: 1181px) {
+    left: 2%;
+    width: 867px;
+    height: 660px;
+  }
+
+  @media screen and (max-width: 1006px) {
+    width: 767px;
+    height: 560px;
+  }
+
+  @media screen and (max-width: 890px) {
+    width: 567px;
+    height: 360px;
+    top: 10%;
+    left: 12%;
+  }
+
+  @media screen and (max-width: 721px) {
+    width: 467px;
+    height: 260px;
+  }
+
+  @media screen and (max-width: 593px) {
+    left: -4%;
+  }
+
+  @media screen and (max-width: 518px) {
+    width: 367px;
+    height: 300px;
+  }
+
+  @media screen and (max-width: 366px) {
+    width: 300px;
+  }
+
+  &.middle ul li {
+    width: 100%;
+  }
+
+  img {
+    margin-left: 0 !important;
+  }
 }
 
 .middle ul {
@@ -93,10 +136,17 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 75%;
+    height: auto;
 
-    &:not([class]) img:last-of-type {
-    margin-left: 2em;
-  }
+    &:not([class]):last-of-type img {
+      margin-left: 2em;
+
+      @media screen and (max-width: 975px) {
+        margin-left: 0;
+        margin-top: 2em;
+      }
+    }
   }
 }
 
@@ -124,6 +174,7 @@ h2 {
   right: -72%;
   top: -43%;
   z-index: -1;
+  width: 100%;
 
   @media screen and (max-width: 1800px) {
     right: 0;
@@ -133,18 +184,94 @@ h2 {
 .supermanGif {
   position: absolute;
   top: 40%;
-  left: 8%;
+  left: 7%;
   z-index: -1;
+
+  @media screen and (max-width: 1006px) {
+    width: 51%;
+  }
+
+  @media screen and (max-width: 975px) {
+    top: 39%;
+  }
+
+  @media screen and (max-width: 890px) {
+    top: 38%;
+  }
+
+  @media screen and (max-width: 592px) {
+    top: 36%;
+  }
+}
+
+.cyclop {
+  ul li {
+    width: 100%;
+
+    img {
+      margin-top: 0;
+      margin-left: 0 !important;
+    }
+  }
 }
 
 .cyclopTV {
-  width: 915px;
-  height: 620px;
+  width: 773px;
+  height: 520px;
+  margin-top: 0 !important;
+
+  @media screen and (max-width: 1012px) {
+    width: 619px;
+    height: 420px;
+  }
+
+  @media screen and (max-width: 814px) {
+    width: 470px;
+    height: 320px;
+  }
+
+  @media screen and (max-width: 616px) {
+    width: 381px;
+    height: 259px;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 329px;
+    height: 222px;
+  }
+
+  @media screen and (max-width: 432px) {
+    width: 278px;
+    height: 188px;
+  }
 }
 
 .cyclop-gif {
   position: absolute;
   top: 7.5%;
   z-index: -1;
-  height: 468px;
+  height: 394px;
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+
+  @media screen and (max-width: 1012px) {
+    height: 317px;
+  }
+
+  @media screen and (max-width: 814px) {
+    top: 7.5%;
+    height: 241px;
+  }
+
+  @media screen and (max-width: 616px) {
+    height: 196px;
+  }
+
+  @media screen and (max-width: 500px) {
+    height: 169px;
+  }
+
+  @media screen and (max-width: 432px) {
+    height: 142px;
+  }
 }

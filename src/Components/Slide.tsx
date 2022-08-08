@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from 'react';
-import { questions, Questions } from "./question";
+import { questions, Questions, Question } from "./question";
 import { useDispatch, useSelector } from "react-redux";
 import { setGoodPoints, setBadPoints } from "../features/points.slice";
 import { setEndGame } from "../features/playing.slice";

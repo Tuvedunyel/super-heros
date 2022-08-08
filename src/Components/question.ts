@@ -97,7 +97,7 @@ export const questions = [
     }
 ]
 
-export type Questions = {
+export type Question = {
     id: number,
     background: string,
     titleBlack: string[],
@@ -108,4 +108,5 @@ export type Questions = {
     classes?: string
     type?: string,
     backgroundType?: string
-}[]
+}
+export type Questions = Question[]
