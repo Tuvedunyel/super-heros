@@ -93,7 +93,8 @@ export const questions = [
         imageUrl: [ "https://btg-communication.fr/wp-content/uploads/2022/08/xmen-tele.png" ],
         imageAlt: "Télévision",
         isAnswered: false,
-        classes: "cyclop"
+        classes: "cyclop",
+        backgroundType: "divergent"
     }
 ]
 
