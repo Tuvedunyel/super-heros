@@ -7,12 +7,12 @@ import Slide from "./Components/Slide";
 
 const App: FC = () => {
     const isPlaying = useSelector( ( state: { playingSlice: { playingSlice: boolean } } ) => state.playingSlice.playingSlice );
-    const gameEnd = useSelector( ( state: { playingSlice: { gameEnd: boolean } } ) => state.playingSlice.gameEnd )
+    const gameEnd = useSelector( ( state: { playingSlice: { gameEnd: boolean } } ) => state.playingSlice.gameEnd );
     const dispatch = useDispatch()
 
 
     return (
-        <div className={ gameEnd ? 'game-end App' : 'App' }>
+        <div className={ isPlaying && !gameEnd ? 'playing App' : 'App' }>
             <div className="container">
                 { isPlaying ? (
                     <Slide />
