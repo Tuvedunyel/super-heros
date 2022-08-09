@@ -51,7 +51,7 @@ h2 {
     color: #061A86;
 
     @media screen and (max-width: 574px) {
-      font-size: 7.5rem;
+      font-size: 6.5rem;
     }
 
     @media screen and (max-width: 370px) {
@@ -113,6 +113,10 @@ h2 {
 
   &.middle ul li {
     width: 100%;
+
+    @media screen and (max-width: 380px) {
+      width: 80%;
+    }
   }
 
   img {
@@ -201,6 +205,11 @@ h2 {
 
   @media screen and (max-width: 592px) {
     top: 36%;
+  }
+
+  @media screen and (max-width: 380px) {
+    width: 40%;
+    left: 16%;
   }
 }
 

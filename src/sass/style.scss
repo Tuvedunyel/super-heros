@@ -136,6 +136,10 @@ h1 {
   border: none;
   z-index: 3;
 
+  @media screen and (max-width: 500px) {
+    font-size: 3.5rem;
+  }
+
   @media screen and (max-width: 402px) {
     padding: 2.9rem 7.5rem 2rem 7.5rem;
   }
