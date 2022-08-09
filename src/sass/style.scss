@@ -21,6 +21,10 @@
 
   &.playing {
     overflow: hidden;
+
+    @media screen and (max-width: 641px) {
+      overflow: auto;
+    }
   }
 }
 
