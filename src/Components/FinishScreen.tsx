@@ -8,35 +8,17 @@ import Contact from "./Contact";
 const FinishScreen: FC = () => {
     const [data, setData] = useState<FinishData>(finishData);
     const goodAnswers = useSelector((state: { pointsSlice: { goodAnswers: number } }) => state.pointsSlice.goodAnswers);
-    const [ title, setTitle ] = useState<string>("");
-    const [ subTitle, setSubTitle ] = useState<string[]>([""]);
-    const [ bulle, setBulle ] = useState<string>("");
     const [ openContact, setOpenContact ] = useState<boolean>(false);
 
     useEffect( () => {
         if ( goodAnswers === 10 ) {
             setData(finishData.slice(0, 1))
-            setTitle( "Alors comme ça on est super ?" )
-            setSubTitle(["Vous êtes un exemple pour nous tous.", "nous aimerions vous parlez de votre prochaine" +
-            " mission"])
-            setBulle("Mais pas un mot")
         } else if ( goodAnswers > 5 && goodAnswers < 10 ) {
             setData(finishData.slice(1, 2))
-            setTitle( "Alors, bientôt un.e super héros ?" )
-            setSubTitle([ "Vous êtes en bonne voie.", "Nous aimerions vous proposer une mission." ])
-            setBulle("chut")
         } else if ( goodAnswers > 1 && goodAnswers < 6 ) {
             setData(finishData.slice(2, 3))
-            setTitle("Alors, prêt.e pour le stage de perfectionnement ?")
-            setSubTitle(["Il y a du travail, mais on sait que vous êtes prêt.e à relever le défi.", "Nous vous" +
-            " suivons depuis quelques temps."])
-            setBulle("Ne le dites pas")
         } else {
             setData(finishData.slice(3, 4))
-            setTitle("Bon... il faut vraiment que l'on parle...")
-            setSubTitle(["C'est pas gagné mais on va pouvoir vous faire passer d'humain", "à super héros qui sauve" +
-            " des vies."])
-            setBulle("Courage")
         }
     }, [goodAnswers])
 
