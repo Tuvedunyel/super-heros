@@ -110,10 +110,29 @@ h2 {
   @media screen and (max-width: 518px) {
     width: 367px;
     height: 300px;
+    left: 0;
   }
 
-  @media screen and (max-width: 366px) {
+  @media screen and (max-width: 420px) {
+    left: -4%;
+  }
+
+  @media screen and (max-width: 408px) {
+    left: -9%;
+  }
+
+  @media screen and (max-width: 394px) {
+    left: -13%;
+  }
+
+  @media screen and (max-width: 376px) {
     width: 300px;
+    left: -5%;
+    top: 20%;
+  }
+
+  @media screen and (max-width: 327px) {
+   left: -9%;
   }
 
   &.middle ul li {
@@ -190,22 +209,33 @@ h2 {
   }
 }
 
+.iconeBuble {
+  @media screen and (max-width: 968px) {
+    display: none;
+  }
+}
+
 .supermanGif {
   position: absolute;
   top: 40%;
-  left: 7%;
+  left: 2%;
   z-index: -1;
 
   @media screen and (max-width: 1006px) {
-    width: 51%;
+    left: -5%;
   }
 
   @media screen and (max-width: 975px) {
     top: 39%;
   }
 
+  @media screen and (max-width: 968px) {
+	left: 5%;
+  }
+
   @media screen and (max-width: 890px) {
     top: 38%;
+    width: 75%;
   }
 
   @media screen and (max-width: 592px) {
@@ -213,8 +243,8 @@ h2 {
   }
 
   @media screen and (max-width: 380px) {
-    width: 40%;
-    left: 16%;
+    width: 57%;
+    left: 14%;
   }
 }
 

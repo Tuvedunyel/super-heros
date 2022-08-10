@@ -69,7 +69,7 @@ export const questions = [
         background: "https://btg-communication.fr/wp-content/uploads/2022/08/logo-superman.svg",
         titleBlack: [ "J'ai mon propre", "pour partager mon savoir" ],
         titleBlue: "film",
-        imageUrl: [ "https://btg-communication.fr/wp-content/uploads/2022/08/mock_up-film_superman2.png" ],
+        imageUrl: [ "https://btg-communication.fr/wp-content/uploads/2022/08/tv.png" ],
         imageAlt: "Télé avec superman prononçant un discours",
         isAnswered: false,
         classes: "superman",

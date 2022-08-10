@@ -6,6 +6,7 @@ import { setEndGame } from "../features/playing.slice";
 import FinishScreen from "./FinishScreen";
 import supermanGif from '../assets/superman.gif'
 import xmenGif from '../assets/xmen.gif'
+import icon from '../assets/icon.png'
 
 const Slide: FC = () => {
     const slideQuestions: Questions = questions
@@ -58,9 +59,12 @@ const Slide: FC = () => {
                                                         <img src={ image } alt={ question.imageAlt }
                                                              className={ question.classes === "cyclop" ? 'cyclopTV' : '' }/>
                                                         { question.classes === "superman" &&
-                                                            <img src={ supermanGif }
-                                                                 alt="Gif de superman à la télévision"
-                                                                 className="supermanGif"/>
+                                                            <>
+                                                                <img src={ supermanGif }
+                                                                     alt="Gif de superman à la télévision"
+                                                                     className="supermanGif"/>
+                                                                <img src={ icon } alt="Slode comme un roc !" className="iconeBuble"/>
+                                                            </>
                                                         }
                                                         {
                                                             question.classes === "cyclop" &&
