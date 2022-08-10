@@ -72,6 +72,8 @@
 
   @media screen and (max-width: 501px) {
     width: 100%;
+    margin-bottom: 1em;
+    height: unset;
   }
 }
 
@@ -89,6 +91,10 @@
     height: 61%;
     width: 100%;
     padding-top: 4.6em;
+  }
+
+  @media screen and (max-width: 400px) {
+    padding-top: 0em;
   }
 }
 
