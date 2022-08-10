@@ -9,9 +9,9 @@ const FinishScreen: FC = () => {
     const [ data, setData ] = useState<FinishData>( finishData );
     const goodAnswers = useSelector( ( state: { pointsSlice: { goodAnswers: number } } ) => state.pointsSlice.goodAnswers );
     const [ openContact, setOpenContact ] = useState<boolean>( false );
-    const [ title, setTitle ] = useState<string | null>( null );
-    const [ subTitle, setSubTitle ] = useState<string[] | null>( null );
-    const [ bulle, setBulle ] = useState<string | null>( null );
+    const [ title, setTitle ] = useState<string>('');
+    const [ subTitle, setSubTitle ] = useState<string[]>(['']);
+    const [ bulle, setBulle ] = useState<string>('');
 
     useEffect( () => {
         if (goodAnswers === 10) {
