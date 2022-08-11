@@ -125,13 +125,17 @@ h2 {
     left: -9%;
   }
 
+  @media screen and (max-width: 404px) {
+    left: 0;
+  }
+
   @media screen and (max-width: 394px) {
-    left: -13%;
+    left: -3%;
   }
 
   @media screen and (max-width: 376px) {
     width: 300px;
-    left: -5%;
+    left: 6%;
     top: 20%;
   }
 
