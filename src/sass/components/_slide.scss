@@ -136,7 +136,7 @@ h2 {
   }
 
   @media screen and (max-width: 327px) {
-   left: -9%;
+    left: -9%;
   }
 
   &.middle ul li {
@@ -170,6 +170,10 @@ h2 {
     align-items: center;
     width: 75%;
     height: auto;
+
+    @media screen and (max-width: 475px) {
+      width: 100%;
+    }
 
     &:not([class]):last-of-type img {
       margin-left: 2em;
@@ -234,7 +238,7 @@ h2 {
   }
 
   @media screen and (max-width: 968px) {
-	left: 5%;
+    left: 5%;
   }
 
   @media screen and (max-width: 890px) {
