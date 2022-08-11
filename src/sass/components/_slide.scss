@@ -113,8 +113,12 @@ h2 {
     left: 0;
   }
 
+  @media screen and (max-width: 437px) {
+    left: -9%;
+  }
+
   @media screen and (max-width: 420px) {
-    left: -4%;
+    left: -8%;
   }
 
   @media screen and (max-width: 408px) {
