@@ -4,9 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setGoodPoints, setBadPoints } from "../features/points.slice";
 import { setEndGame } from "../features/playing.slice";
 import FinishScreen from "./FinishScreen";
-import supermanGif from '../assets/superman.gif'
-import xmenGif from '../assets/xmen.gif'
-import icon from '../assets/icon.png'
+import { assets } from './assets'
 
 const Slide: FC = () => {
     const slideQuestions: Questions = questions
@@ -60,15 +58,15 @@ const Slide: FC = () => {
                                                              className={ question.classes === "cyclop" ? 'cyclopTV' : '' }/>
                                                         { question.classes === "superman" &&
                                                             <>
-                                                                <img src={ supermanGif }
+                                                                <img src={ assets.supermanGif }
                                                                      alt="Gif de superman à la télévision"
                                                                      className="supermanGif"/>
-                                                                <img src={ icon } alt="Slode comme un roc !" className="iconeBuble"/>
+                                                                <img src={ assets.icon } alt="Slode comme un roc !" className="iconeBuble"/>
                                                             </>
                                                         }
                                                         {
                                                             question.classes === "cyclop" &&
-                                                            <img src={ xmenGif } alt="Cyclop présenter le motion design"
+                                                            <img src={ assets.xmenGif } alt="Cyclop présenter le motion design"
                                                                  className="cyclop-gif"/>
                                                         }
                                                     </li>

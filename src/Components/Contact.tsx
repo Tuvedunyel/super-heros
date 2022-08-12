@@ -1,5 +1,5 @@
 import { ChangeEvent, FC, FormEvent, useState } from 'react';
-import bulleCarre from '../assets/bulle-carre.svg'
+import { assets } from './assets'
 import axios from "axios";
 import { useSelector } from "react-redux";
 
@@ -40,7 +40,7 @@ const Contact: FC<{ title: string, subTitle: string[], bulle: string }> = ( { ti
             bodyFormData.set( 'organisation', organisation );
             axios( {
                 method: "post",
-                url: "https://www.btg-dev.com/btg-form-easteregg/wp-json/contact-form-7/v1/contact-forms/10/feedback",
+                url: "https://www.btg-communication.fr/super-heros/wp-json/contact-form-7/v1/contact-forms/5/feedback",
                 data: bodyFormData,
             } )
                 .then( response => {
@@ -66,7 +66,7 @@ const Contact: FC<{ title: string, subTitle: string[], bulle: string }> = ( { ti
                 <h2>{ title }</h2>
                 <div className="second-part">
                     <div className="bulle">
-                        <img src={ bulleCarre } alt="Infobulle"/>
+                        <img src={ assets.bulleCarre } alt="Infobulle"/>
                         { bulle }
                     </div>
                     <h3>
