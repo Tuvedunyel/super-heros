@@ -1,7 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import { finishData, FinishData } from "./finishData";
 import { useSelector } from "react-redux";
-import bulleCarre from 'https://btg-communication.fr/super-heros/wp-content/uploads/2022/08/bulle-carre.svg'
 import { assets } from './assets'
 import Contact from "./Contact";
 
@@ -62,7 +61,7 @@ const FinishScreen: FC = () => {
                                     <span>
                                         { item.infoBulleDeux }
                                     </span>
-                                            <img src={ bulleCarre } alt="Bulle de BD"/>
+                                            <img src={ assets.bulleCarre } alt="Bulle de BD"/>
                                         </div>
                                         <div className=" text-bulle text-bulle-rond">
                                     <span>
