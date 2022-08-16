@@ -7,7 +7,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin-top: 2em;
+    margin-top: 2.5em;
     margin-bottom: 2em;
     height: calc(100vh - 2em - 2em);
     position: relative;
@@ -70,7 +70,7 @@ h2 {
   width: 967px;
   height: 760px;
   margin: auto;
-  left: 23%;
+  left: 25%;
 
   @media screen and (max-width: 1568px) {
     left: 17%;
@@ -156,6 +156,11 @@ h2 {
   }
 }
 
+.iconeBuble {
+   position: absolute;
+   right: -37%;
+}
+
 .middle ul {
   display: flex;
   justify-content: center;
@@ -163,6 +168,8 @@ h2 {
   position: relative;
   width: fit-content;
   height: fit-content;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 
   @media screen and (max-width: 975px) {
     flex-direction: column;
@@ -172,12 +179,8 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 75%;
+    width: 100%;
     height: auto;
-
-    @media screen and (max-width: 475px) {
-      width: 100%;
-    }
 
     &:not([class]):last-of-type img {
       margin-left: 2em;
@@ -198,14 +201,15 @@ h2 {
   align-items: center;
   gap: 2em;
 
-  @media screen and (max-width: 641px) {
-    flex-direction: column;
-  }
-
   .btn {
     margin-top: 0;
     font-size: 3.3rem;
     padding: 2.2rem 12.6rem 1.8rem 12.9rem;
+
+    @media screen and (max-width: 641px) {
+      font-size: 2.3rem;
+      padding: 2.2rem 7rem 1.8rem 7rem;
+    }
   }
 }
 

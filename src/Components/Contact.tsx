@@ -36,7 +36,7 @@ const Contact: FC<{ title: string, subTitle: string[], bulle: string }> = ( { ti
             const bodyFormData = new FormData();
             bodyFormData.set( 'nom', name );
             bodyFormData.set( "email", email );
-            bodyFormData.set( 'score', `${ goodAnswers } + ${ totalAnswers }` )
+            bodyFormData.set( 'score', `${ goodAnswers } / ${ totalAnswers }` )
             bodyFormData.set( 'organisation', organisation );
             axios( {
                 method: "post",

@@ -22,7 +22,7 @@ export const questions = [
         background: "https://btg-communication.fr/wp-content/uploads/2022/08/speed.svg",
         titleBlack: [ "J'ai une", "aux pouvoirs d'information uniques" ],
         titleBlue: "plaquette",
-        imageUrl: [ "https://btg-communication.fr/wp-content/uploads/2022/08/liflet.png" ],
+        imageUrl: [ "https://btg-communication.fr/wp-content/uploads/2022/08/liflet-1.png" ],
         imageAlt: "Plaquette, le pouvoir de la toile",
         isAnswered: false,
     },

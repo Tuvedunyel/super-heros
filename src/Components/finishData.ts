@@ -1,18 +1,18 @@
 export const finishData = [
     {
         id: 0,
-        titles: [ "Bravo", "Vous êtes vraiment un.e", "super héros" ],
+        titles: [ "Bravo", "Vous êtes vraiment un.e", "super héro.ïne.s" ],
         img: {
             url: "https://btg-communication.fr/wp-content/uploads/2022/08/win.png",
             alt: "Homme avec un casque et une cape rouge"
         },
         infoBulleUn: "Comment avez-vous fait ?",
-        infoBulleDeux: "On veut connaitre votre secret.",
+        infoBulleDeux: "On veut connaître votre secret.",
         textButton: "Je partage mon pouvoir"
     },
     {
         id: 1,
-        titles: ["Bien !", "Vous êtes bientôt un.e", "super héros"],
+        titles: ["Bien !", "Vous êtes bientôt un.e", "super héro.ïne.s"],
         img: {
             url: "https://btg-communication.fr/wp-content/uploads/2022/08/pas-mal.png",
             alt: "Home avec un casque et une cape rouge"
@@ -23,7 +23,7 @@ export const finishData = [
     },
     {
         id: 2,
-        titles: ["Pas trop mal", "Vous êtes un.e super héros", "en devenir"],
+        titles: ["Pas trop mal", "Vous êtes un.e super héro.ïne.s", "en devenir"],
         img: {
             url: "https://btg-communication.fr/wp-content/uploads/2022/08/moyen.png",
             alt: "Home avec un casque et une cape rouge"
@@ -34,7 +34,7 @@ export const finishData = [
     },
     {
         id: 3,
-        titles: ["Bon, vous n'êtes,", "pas un.e super héros..."],
+        titles: ["Bon, vous n'êtes,", "pas un.e super héro.ïne.s..."],
         img: {
             url: "https://btg-communication.fr/wp-content/uploads/2022/08/mauvais.png",
             alt: "Home avec un casque et une cape rouge"
