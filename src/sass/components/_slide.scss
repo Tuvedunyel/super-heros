@@ -201,6 +201,10 @@ h2 {
   align-items: center;
   gap: 2em;
 
+  @media screen and (max-width: 641px) {
+    gap: 0.5em;
+  }
+
   .btn {
     margin-top: 0;
     font-size: 3.3rem;

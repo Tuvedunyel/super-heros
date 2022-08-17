@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 import { questions, Questions, Question } from "./question";
 import { useDispatch, useSelector } from "react-redux";
-import { setGoodPoints, setBadPoints } from "../features/points.slice";
+import { editAnswers, addAnswers, setBadPoints, setGoodPoints } from "../features/points.slice";
 import { setEndGame } from "../features/playing.slice";
 import FinishScreen from "./FinishScreen";
 import { assets } from './assets'
@@ -11,18 +11,32 @@ const Slide: FC = () => {
     const [ a, setA ] = useState( 0 );
     const [ b, setB ] = useState( 1 );
     const endGame = useSelector( ( state: { playingSlice: { gameEnd: boolean } } ) => state.playingSlice.gameEnd );
+    const edit = useSelector( ( state: { pointsSlice: { edit: boolean } } ) => state.pointsSlice.edit );
+    const answers = useSelector( (state: { pointsSlice: { answers: {id: number, goodAnswer: number, badAnswer: number}[] } }) => state.pointsSlice.answers );
     const dispatch = useDispatch();
 
-    const handleClick = ( answer: boolean ) => {
-        if (answer) {
-            dispatch( setGoodPoints( 1 ) )
+    const handleClick = ( id: number, answer: boolean ) => {
+        if (edit) {
+            if (answer) {
+                dispatch( editAnswers( { id, goodAnswer: 1, badAnswer: 0 } ) );
+            } else {
+                dispatch( editAnswers( { id, goodAnswer: 0, badAnswer: 1 } ) );
+            }
         } else {
-            dispatch( setBadPoints( 1 ) )
+            if (answer) {
+                dispatch( addAnswers( { id, goodAnswer: 1, badAnswer: 0 } ) );
+            } else {
+                dispatch( addAnswers( { id, goodAnswer: 0, badAnswer: 1 } ) );
+            }
         }
         if (b < slideQuestions.length) {
             setA( a + 1 );
             setB( b + 1 );
         } else {
+            answers.map( ( answer ) => {
+                dispatch( setGoodPoints( answer.goodAnswer ) );
+                dispatch( setBadPoints( answer.badAnswer ) );
+            } )
             dispatch( setEndGame( true ) )
         }
     }
@@ -61,12 +75,14 @@ const Slide: FC = () => {
                                                                 <img src={ assets.supermanGif }
                                                                      alt="Gif de superman à la télévision"
                                                                      className="supermanGif"/>
-                                                                <img src={ assets.icon } alt="Slode comme un roc !" className="iconeBuble"/>
+                                                                <img src={ assets.icon } alt="Slode comme un roc !"
+                                                                     className="iconeBuble"/>
                                                             </>
                                                         }
                                                         {
                                                             question.classes === "cyclop" &&
-                                                            <img src={ assets.xmenGif } alt="Cyclop présenter le motion design"
+                                                            <img src={ assets.xmenGif }
+                                                                 alt="Cyclop présenter le motion design"
                                                                  className="cyclop-gif"/>
                                                         }
                                                     </li>
@@ -75,9 +91,11 @@ const Slide: FC = () => {
                                         </ul>
                                     </div>
                                     <div className="question-bottom">
-                                        <button className="btn yes-btn" onClick={ () => handleClick( true ) }>Oui <span
+                                        <button className="btn yes-btn"
+                                                onClick={ () => handleClick( question.id, true ) }>Oui <span
                                             className="pseudo-bg">Oui</span></button>
-                                        <button className="btn no-btn" onClick={ () => handleClick( false ) }>Non <span
+                                        <button className="btn no-btn"
+                                                onClick={ () => handleClick( question.id, false ) }>Non <span
                                             className="pseudo-bg">Non</span></button>
                                     </div>
                                 </div>
