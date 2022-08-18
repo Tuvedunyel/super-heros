@@ -179,7 +179,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 85%;
     height: auto;
 
     &:not([class]):last-of-type img {
@@ -338,4 +338,19 @@ h2 {
   @media screen and (max-width: 432px) {
     height: 142px;
   }
+}
+
+.question-back-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.back-question {
+  color: #061A86;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  cursor: pointer;
 }

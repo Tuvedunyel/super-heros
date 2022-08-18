@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 import { questions, Questions, Question } from "./question";
 import { useDispatch, useSelector } from "react-redux";
-import { editAnswers, addAnswers, setBadPoints, setGoodPoints } from "../features/points.slice";
+import { editAnswers, addAnswers, setBadPoints, setGoodPoints, setEdit } from "../features/points.slice";
 import { setEndGame } from "../features/playing.slice";
 import FinishScreen from "./FinishScreen";
 import { assets } from './assets'
@@ -12,7 +12,7 @@ const Slide: FC = () => {
     const [ b, setB ] = useState( 1 );
     const endGame = useSelector( ( state: { playingSlice: { gameEnd: boolean } } ) => state.playingSlice.gameEnd );
     const edit = useSelector( ( state: { pointsSlice: { edit: boolean } } ) => state.pointsSlice.edit );
-    const answers = useSelector( (state: { pointsSlice: { answers: {id: number, goodAnswer: number, badAnswer: number}[] } }) => state.pointsSlice.answers );
+    const answers = useSelector( ( state: { pointsSlice: { answers: { id: number, goodAnswer: number, badAnswer: number }[] } } ) => state.pointsSlice.answers );
     const dispatch = useDispatch();
 
     const handleClick = ( id: number, answer: boolean ) => {
@@ -22,6 +22,7 @@ const Slide: FC = () => {
             } else {
                 dispatch( editAnswers( { id, goodAnswer: 0, badAnswer: 1 } ) );
             }
+            dispatch( setEdit( false ) );
         } else {
             if (answer) {
                 dispatch( addAnswers( { id, goodAnswer: 1, badAnswer: 0 } ) );
@@ -33,12 +34,18 @@ const Slide: FC = () => {
             setA( a + 1 );
             setB( b + 1 );
         } else {
-            answers.map( ( answer ) => {
+           answers.map( ( answer ) => {
                 dispatch( setGoodPoints( answer.goodAnswer ) );
                 dispatch( setBadPoints( answer.badAnswer ) );
             } )
             dispatch( setEndGame( true ) )
         }
+    }
+
+    const handlePrev = () => {
+        dispatch( setEdit( true ) )
+        setA( a - 1 );
+        setB( b - 1 );
     }
 
 
@@ -90,13 +97,20 @@ const Slide: FC = () => {
                                             }
                                         </ul>
                                     </div>
-                                    <div className="question-bottom">
-                                        <button className="btn yes-btn"
-                                                onClick={ () => handleClick( question.id, true ) }>Oui <span
-                                            className="pseudo-bg">Oui</span></button>
-                                        <button className="btn no-btn"
-                                                onClick={ () => handleClick( question.id, false ) }>Non <span
-                                            className="pseudo-bg">Non</span></button>
+                                    <div className="question-back-container">
+                                        <div className="question-bottom">
+                                            <button className="btn yes-btn"
+                                                    onClick={ () => handleClick( question.id, true ) }>Oui <span
+                                                className="pseudo-bg">Oui</span></button>
+                                            <button className="btn no-btn"
+                                                    onClick={ () => handleClick( question.id, false ) }>Non <span
+                                                className="pseudo-bg">Non</span></button>
+                                        </div>
+                                        {
+                                            a > 0 &&
+                                            <h4 className="back-question" onClick={ handlePrev }>&#10094; Retour à la
+                                                question précédente</h4>
+                                        }
                                     </div>
                                 </div>
                             ) )

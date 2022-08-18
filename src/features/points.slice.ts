@@ -38,5 +38,5 @@ export const pointsSlice = createSlice( {
     }
 } )
 
-export const { setGoodPoints, setBadPoints, editAnswers, addAnswers } = pointsSlice.actions;
+export const { setGoodPoints, setBadPoints, editAnswers, addAnswers, setEdit } = pointsSlice.actions;
 export default pointsSlice.reducer
