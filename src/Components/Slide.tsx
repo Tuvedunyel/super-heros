@@ -5,6 +5,7 @@ import { editAnswers, addAnswers, setBadPoints, setGoodPoints, setEdit } from ".
 import { setEndGame } from "../features/playing.slice";
 import FinishScreen from "./FinishScreen";
 import { assets } from './assets'
+import LoadingPoints from "./LoadingPoints";
 
 const Slide: FC = () => {
     const slideQuestions: Questions = questions
@@ -44,10 +45,6 @@ const Slide: FC = () => {
             setA( a + 1 );
             setB( b + 1 );
         } else {
-            answers.map( ( answer ) => {
-                dispatch( setGoodPoints( answer.goodAnswer ) );
-                dispatch( setBadPoints( answer.badAnswer ) );
-            } )
             dispatch( setEndGame( true ) )
         }
     }
@@ -63,7 +60,7 @@ const Slide: FC = () => {
         <>
             {
                 endGame ? (
-                    <FinishScreen/>
+                    <LoadingPoints />
                 ) : (
                     <section className="slide">
                         {

@@ -1,0 +1,32 @@
+.loader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader__inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  color: #061A86;
+  gap: 2em;
+
+  h2 {
+    font-size: 5rem;
+  }
+
+  h3 {
+    font-size: 4rem;
+  }
+
+  strong {
+    font-size: 3.5rem;
+    color: black;
+  }
+}
