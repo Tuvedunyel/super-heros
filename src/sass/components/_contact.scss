@@ -21,6 +21,10 @@
     @media screen and (max-width: 892px) {
       max-width: 100%;
     }
+
+    @media screen and (max-width: 400px) {
+      font-size: 4.5rem;
+    }
   }
 }
 
@@ -75,6 +79,10 @@
     font-family: 'Exo', sans-serif;
     font-weight: 700;
     text-align: center;
+
+    @media screen and (max-width: 450px) {
+      font-size: 2rem;
+    }
   }
 }
 
@@ -87,7 +95,8 @@ form {
   width: 100%;
 
   @media screen and (max-width: 400px) {
-    margin-top: 2em;
+    margin-top: 1.2em;
+    gap: 1.7rem;
   }
 
   .btn {
@@ -124,6 +133,11 @@ input {
   padding-inline: 0.5em;
   border-radius: 3.3rem;
   border: 1px solid #061A86;
+
+  @media screen and (max-width: 550px) {
+    padding-block: 0.2em;
+    padding-inline: 0.2em;
+  }
 
   &:focus {
     outline: #3C8EFF;

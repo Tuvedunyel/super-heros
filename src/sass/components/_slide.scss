@@ -353,4 +353,9 @@ h2 {
   text-transform: uppercase;
   font-size: 2.5rem;
   cursor: pointer;
+
+  @media screen and (max-width: 500px) {
+    font-size: 2rem;
+    text-align: center;
+  }
 }
