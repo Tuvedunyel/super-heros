@@ -15,6 +15,15 @@ const Slide: FC = () => {
     const answers = useSelector( ( state: { pointsSlice: { answers: { id: number, goodAnswer: number, badAnswer: number }[] } } ) => state.pointsSlice.answers );
     const dispatch = useDispatch();
 
+    useEffect( () => {
+        answers.map( answer => {
+            if ( answer.id === slideQuestions[a].id ) {
+                dispatch( setEdit(true) )
+            }
+        } )
+    } )
+
+
     const handleClick = ( id: number, answer: boolean ) => {
         if (edit) {
             if (answer) {
@@ -22,19 +31,20 @@ const Slide: FC = () => {
             } else {
                 dispatch( editAnswers( { id, goodAnswer: 0, badAnswer: 1 } ) );
             }
-            dispatch( setEdit( false ) );
+            dispatch(setEdit(false))
         } else {
             if (answer) {
                 dispatch( addAnswers( { id, goodAnswer: 1, badAnswer: 0 } ) );
             } else {
                 dispatch( addAnswers( { id, goodAnswer: 0, badAnswer: 1 } ) );
             }
+            dispatch(setEdit(false))
         }
         if (b < slideQuestions.length) {
             setA( a + 1 );
             setB( b + 1 );
         } else {
-           answers.map( ( answer ) => {
+            answers.map( ( answer ) => {
                 dispatch( setGoodPoints( answer.goodAnswer ) );
                 dispatch( setBadPoints( answer.badAnswer ) );
             } )
