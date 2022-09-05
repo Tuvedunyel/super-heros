@@ -19,11 +19,14 @@ const LoadingPoints: FC = () => {
     useEffect( () => {
         if (loader < 100) {
             setInterval( () => {
-                setLoader( loader + 2 )
+                setLoader( loader + 10 )
             }, 100 )
         } else {
             setLoading( false )
         }
+        setTimeout( () => {
+            setLoading( false )
+        }, 3000 )
     }, [ loader ] )
 
     return (

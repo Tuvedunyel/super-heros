@@ -116,6 +116,15 @@
     height: 143px;
   }
 
+  .virgule {
+    width: 50px;
+    height: 50px;
+    bottom: -24%;
+    top: unset;
+    left: unset;
+    right: 8%;
+  }
+
   @media screen and (max-width: 501px) {
     position: relative;
     right: unset !important;
@@ -168,7 +177,7 @@
   text-align: center;
   line-height: 1;
   right: 50%;
-  top: 22%;
+  top: 7%;
   align-items: start !important;
 
   @media screen and (max-width: 1007px) {
@@ -181,7 +190,7 @@
   }
 
   span {
-    margin-top: 0.8em;
+    margin: auto;
     display: flow-root;
   }
 }

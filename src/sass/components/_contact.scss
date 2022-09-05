@@ -59,10 +59,33 @@
     font-size: 2.7rem;
     position: absolute;
     z-index: 1;
-    padding: 1em 2em;
     color: #FF3C3E;
     right: -9%;
     top: -148%;
+    display: flex;
+    width: 250px;
+    height: 110px;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      position: absolute;
+      inset: 0;
+    }
+
+    span {
+      display: flow-root;
+      margin: auto;
+    }
+
+    .virgule {
+      width: 50px;
+      height: 50px;
+      bottom: -24%;
+      top: unset;
+      left: 8%;
+      transform: rotateY(0deg);
+    }
 
     @media screen and (max-width: 1068px) {
       display: none;
@@ -178,8 +201,26 @@ input {
   font-size: 3rem;
   font-weight: 700;
   text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .rs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin-top: 10.5rem;
+
+    li, li a {
+      width: 84.64px;
+      height: 97.73px;
+    }
+  }
 
   h3 {
     color: #061A86;
+    text-align: center;
   }
 }

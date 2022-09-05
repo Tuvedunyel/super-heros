@@ -8,9 +8,9 @@ const FinishScreen: FC = () => {
     const [ data, setData ] = useState<FinishData>( finishData );
     const goodAnswers = useSelector( ( state: { pointsSlice: { goodAnswers: number } } ) => state.pointsSlice.goodAnswers );
     const [ openContact, setOpenContact ] = useState<boolean>( false );
-    const [ title, setTitle ] = useState<string>('');
-    const [ subTitle, setSubTitle ] = useState<string[]>(['']);
-    const [ bulle, setBulle ] = useState<string>('');
+    const [ title, setTitle ] = useState<string>( '' );
+    const [ subTitle, setSubTitle ] = useState<string[]>( [ '' ] );
+    const [ bulle, setBulle ] = useState<string>( '' );
 
     useEffect( () => {
         if (goodAnswers === 10) {
@@ -58,15 +58,16 @@ const FinishScreen: FC = () => {
                                 <div className="right">
                                     <div className="right-top">
                                         <div className=" text-bulle text-bulle-carre">
-                                    <span>
-                                        { item.infoBulleDeux }
-                                    </span>
+                                            <span>
+                                                { item.infoBulleDeux }
+                                            </span>
                                             <img src={ assets.bulleCarre } alt="Bulle de BD"/>
+                                            <img src={ assets.virgule } alt="Virgule de la bulle de BD" className="virgule" />
                                         </div>
                                         <div className=" text-bulle text-bulle-rond">
-                                    <span>
-                                        { item.infoBulleUn }
-                                    </span>
+                                            <span>
+                                                { item.infoBulleUn }
+                                            </span>
                                             <img src={ assets.bulleRond } alt="Bulle de BD"/>
                                         </div>
                                     </div>
